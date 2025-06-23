@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Mi Blog Personal</title>
+</head>
+<body>
+    <div class="container">
+    <h1>Mi Blog Personal</h1>
+    <div class="contenedor_de_articulos_fecha">
+        <ul>
+            {% for article in articles %}
+                <li>
+                    <a href="/article/{{ article.id }}">{{ article.title }}</a>
+                    <p class="fecha">{{ article.date }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <!-- Botón flotante de admin (aún sin funcionalidad) -->
+    <a href="/admin" style="position:fixed; bottom:20px; right:20px; background:#333; color:white; padding:10px; text-decoration:none;">Admin</a>
+    </div>
+</body>
+</html>

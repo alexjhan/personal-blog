@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>{{ article.title }}</title>
+</head>
+<body>
+    <div  class="container">
+    <h1>{{ article.title }}</h1>
+    <p><strong>Fecha:</strong> {{ article.date }}</p>
+    <hr>
+    <p>{{ article.content }}</p>
+
+    <br>
+    <a href="/">← Volver a la lista de artículos</a>
+    </div>
+</body>
+</html>
+<!--
+    Este es un ejemplo de cómo se vería un artículo individual.
+    Puedes personalizar el estilo y la estructura según tus necesidades.  

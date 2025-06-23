@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Panel de Administración</title>
+</head>
+<body>
+    <div class="container">
+    <h1>Panel del Administrador</h1>
+    <a href="/add">+ Nuevo artículo</a> | <a href="/logout">Cerrar sesión</a>
+    <ul>
+        {% for article in articles %}
+            <li>
+                <strong>{{ article.title }}</strong> ({{ article.date }})
+                [<a href="/edit/{{ article.id }}">Editar</a>]
+                [<a href="/delete/{{ article.id }}" onclick="return confirm('¿Eliminar este artículo?');">Eliminar</a>]
+            </li>
+        {% endfor %}
+    </ul>
+    </div>
+</body>
+</html>
